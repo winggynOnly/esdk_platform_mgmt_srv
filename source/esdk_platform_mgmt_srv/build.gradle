@@ -1,0 +1,58 @@
+apply plugin: 'war'
+
+ext.zipFileName = 'platform-mgmt-api'
+
+addDependentProject(project, "compile", "esdk_platform_srv")
+addDependentProject(project, "compile", "esdk_platform_rest_srv")
+
+dependencies {
+	compile ':log4j:1.2.16'
+	compile ':org.restlet:'
+	compile ':javax.ws.rs:'
+	compile ':org.restlet.ext.jaxrs:'
+	compile ':commons-digester3:3.2'
+	compile ':spring-core:3.2.8.RELEASE'
+}
+
+war {
+	from 'WebContent'
+}
+
+preZipComponent << {
+	copy {
+		from ("../esdk_platform_common/build/libs") {
+			include '*.jar'
+		}
+		from ("../esdk_platform_interface/build/libs") {
+			include '*.jar'
+		}
+		from ("../esdk_platform_srv/build/libs") {
+			include '*.jar'
+		}
+		from ("../esdk_platform_rest_srv/build/libs") {
+			include '*.jar'
+		}
+		from ("$esdkSrcRootDir/eSDK_Platform_V100R005/Server/open_src") {
+			include 'log4j-1.2.16.jar'
+			include 'dom4j-1.6.1.jar'
+			include 'commons-digester3-3.2.jar'
+			include 'commons-io-2.4.jar'
+			include 'gson-2.2.2.jar'
+			include 'quartz-1.7.3.jar'
+			include 'commons-beanutils-1.9.1.jar'
+		}
+		from ("$esdkSrcRootDir/eSDK_Platform_V100R005/Server/open_src/cxf-2.6.14") {
+			include 'commons-logging-1.1.1.jar'
+		}
+		from ("$esdkSrcRootDir/eSDK_Platform_V100R005/Server/open_src/restlet-2.2.1") {
+			include '*.jar'
+		}
+		from ("$esdkSrcRootDir/eSDK_Platform_V100R005/Server/open_src/spring-3.2.8"){
+			include '*.jar'
+		}
+		
+		into "build/zipTemp/esdk/webcontent/WEB-INF/lib"
+	}
+	file("build/zipTemp/esdk/webcontent").renameTo(file("build/zipTemp/esdk/webcontent_mgmt"))
+	file("build/zipTemp/esdk").renameTo(file("build/zipTemp/esdkom"))
+}

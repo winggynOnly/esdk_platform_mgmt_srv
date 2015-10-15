@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="WebContent/conf"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="src" path="/esdk_platform_common"/>
+	<classpathentry exported="true" kind="src" path="/esdk_platform_interface"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/restlet-2.2.1/org.restlet.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/restlet-2.2.1/org.restlet.ext.jaxrs.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/spring-3.2.8/spring-core-3.2.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/commons-digester3-3.2.jar"/>
+	<classpathentry kind="lib" path="D:/01_RD/01_src/eSDK_Solution_V100R005/trunk/eSDK_Platform_V100R005/Server/open_src/restlet-2.2.1/javax.ws.rs.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
